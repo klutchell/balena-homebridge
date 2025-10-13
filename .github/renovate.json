@@ -1,16 +1,24 @@
 {
-  "extends": ["github>klutchell/renovate-config"],
+  "extends": [
+    "github>klutchell/renovate-config"
+  ],
   "packageRules": [
     {
-      "matchDepNames": ["homebridge/homebridge"],
-      "matchDatasources": ["docker"],
+      "matchDepNames": [
+        "homebridge/homebridge"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "versioning": "regex:^(?<compatibility>.*)-(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$"
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)balena\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/(^|/)balena\\.ya?ml$/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (?:packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+version:\\s*[\"']?(?<currentVersion>.+?)[\"']?\\s"
       ],
