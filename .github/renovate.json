@@ -10,22 +10,23 @@
       "matchDatasources": [
         "docker"
       ],
-      "versioning": "regex:^(?<compatibility>.*)-(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$",
-      "automerge": false
-    }
-  ],
-  "customManagers": [
+      "versioning": "regex:^(?<compatibility>.*)-(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$"
+    },
     {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/(^|/)balena\\.ya?ml$/"
+      "matchDepNames": [
+        "homebridge/homebridge"
       ],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (?:packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+version:\\s*[\"']?(?<currentVersion>.+?)[\"']?\\s"
+      "matchDatasources": [
+        "docker"
       ],
-      "versioningTemplate": "regex:^(?<compatibility>.*)-(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$",
-      "currentValueTemplate": "{{{compatibility}}}-{{{replace '\\.' '-' currentValue}}}",
-      "autoReplaceStringTemplate": "version: {{{major}}}.{{{minor}}}.{{{patch}}}"
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "postUpgradeTasks": {
+        "commands": [
+          "sed \"s|^version: .*$|version: {{{newMajor}}}.{{{newMinor}}}.{{{newPatch}}}|\" -i balena.yml"
+        ],
+        "fileFilters": ["balena.yml"],
+        "executionMode": "update"
+      }
     }
   ]
 }
