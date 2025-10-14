@@ -1,11 +1,7 @@
 # https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Docker
 # https://github.com/homebridge/docker-homebridge
 # https://hub.docker.com/r/homebridge/homebridge
-
-# renovate: datasource=docker depName=homebridge/homebridge
-ARG HOMEBRIDGE_DOCKER_VERSION=beta-2025-10-09
-
-FROM homebridge/homebridge:${HOMEBRIDGE_DOCKER_VERSION}
+FROM homebridge/homebridge:beta-2025-10-09
 
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
