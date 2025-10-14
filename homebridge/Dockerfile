@@ -3,7 +3,7 @@
 # https://hub.docker.com/r/homebridge/homebridge
 
 # renovate: datasource=docker depName=homebridge/homebridge
-ARG HOMEBRIDGE_DOCKER_VERSION=beta-2025-06-27
+ARG HOMEBRIDGE_DOCKER_VERSION=beta-2025-10-09
 
 FROM homebridge/homebridge:${HOMEBRIDGE_DOCKER_VERSION}
 
