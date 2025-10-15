@@ -10,7 +10,7 @@
       "matchDatasources": [
         "docker"
       ],
-      "versioning": "regex:^(?<compatibility>.*)-(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$"
+      "versioning": "regex:^((?<compatibility>.*)-)?(?<major>\\d{4})-0?(?<minor>\\d{1,2})-0?(?<patch>\\d{1,2})$"
     },
     {
       "matchDepNames": [
