@@ -1,4 +1,4 @@
 name: "Homebridge"
 type: "sw.application"
-version: 2025.11.27
+version: 2025.12.6
 description: "Homebridge allows you to integrate with smart home devices that do not natively support HomeKit."
