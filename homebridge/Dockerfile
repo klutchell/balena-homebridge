@@ -1,7 +1,7 @@
 # https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Docker
 # https://github.com/homebridge/docker-homebridge
 # https://hub.docker.com/r/homebridge/homebridge
-FROM homebridge/homebridge:2026-03-07@sha256:d150c770ec7879b1d277cf162cb104ba5ac4856cd4b887539f0e2c5dfd4c4784
+FROM homebridge/homebridge:2026-03-24@sha256:dafd2e9c0fca59f1aa5e886e29f67699ab85a2680a0ace1772a13d837a1e8416
 
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
